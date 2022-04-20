@@ -8,7 +8,7 @@
 <img src="https://raw.githubusercontent.com/qeeqbox/honeypots/main/readme/intro.gif" style="max-width:768px"/>
 
 ## Custom configure with logs location
-` docker run -i --privileged honeypot --setup all --config config.json -p <as required>`
+` docker run -i --privileged honeypot --setup all --config config.json -p <as required> -v ~/honeypot:/var/log/honeypots/  `
 
 ### Exposed ports internally
 
