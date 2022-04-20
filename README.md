@@ -90,3 +90,6 @@ Without Terminal output
 'password'  :'Attacker password'
 ```
 
+### Things to add
+1 Docker compose
+2 ELK integration
