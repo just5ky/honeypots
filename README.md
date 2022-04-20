@@ -91,5 +91,5 @@ Without Terminal output
 ```
 
 ### Things to add
-1 Docker compose
-2 ELK integration
+- Docker compose
+- ELK integration
