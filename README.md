@@ -7,6 +7,31 @@
 
 <img src="https://raw.githubusercontent.com/qeeqbox/honeypots/main/readme/intro.gif" style="max-width:768px"/>
 
+## honeypots -h
+```sh
+Qeeqbox/honeypots customizable honeypots for monitoring network traffic, bots activities, and username\password credentials
+
+Arguments:
+  --setup               target honeypot E.g. ssh or you can have multiple E.g ssh,http,https
+  --list                list all available honeypots
+  --kill                kill all honeypots
+  --verbose             Print error msgs
+
+Honeypots options:
+  --ip                  Override the IP
+  --port                Override the Port (Do not use on multiple!)
+  --username            Override the username
+  --password            Override the password
+  --config              Use a config file for honeypots settings
+  --options             Extra options (capture_commands for capturing all threat actor data)
+
+General options:
+  --termination-strategy {input,signal} Determines the strategy to terminate by
+  --test                Test a honeypot
+  --auto                Setup the honeypot with random port
+```
+
+
 ## Custom configure with logs location
 ` docker run -i --privileged honeypot --setup all --config config.json -p <as required> -v ~/honeypot:/var/log/honeypots/  `
 
