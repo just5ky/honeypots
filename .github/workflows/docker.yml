@@ -1,4 +1,4 @@
-name: branch build & push
+name: DockerHub
 
 on:
   #schedule:
