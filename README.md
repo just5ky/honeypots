@@ -7,7 +7,9 @@
 
 <img src="https://raw.githubusercontent.com/qeeqbox/honeypots/main/readme/intro.gif" style="max-width:768px"/>
 
-## honeypots -h
+---
+
+## docker run -i --privileged honeypot -h
 ```sh
 Qeeqbox/honeypots customizable honeypots for monitoring network traffic, bots activities, and username\password credentials
 
@@ -43,7 +45,7 @@ Without Terminal output
 
 ### Exposed ports internally
 
-`21, 8080, 80, 443, 143, 3306, 110, 5432, 6379, 445, 25, 1080, 22, 23, 5900, 9200, 1433, 389, 123, 11211, 1521, 161`
+`21, 22, 23, 25, 80, 110, 123, 143, 161, 389, 443, 445, 1080, 1433, 1521, 3306, 5432, 5900, 6379, 8080, 9200, 11211`
 
 
 #### config.json (Output to folder)
