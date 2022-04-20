@@ -10,7 +10,8 @@
 ## Custom configure with logs location
 ` docker run -i --privileged honeypot --setup all --config config.json -p <as required>`
 
-Exposed ports internally
+### Exposed ports internally
+
 `21, 8080, 80, 443, 143, 3306, 110, 5432, 6379, 445, 25, 1080, 22, 23, 5900, 9200, 1433, 389, 123, 11211, 1521, 161`
 
 
