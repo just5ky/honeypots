@@ -1,6 +1,6 @@
 {
    "logs":"file,terminal,json",
-   "logs_location":"/var/log/honeypots/",
+   "logs_location":"/honeypots/logs",
    "syslog_address":"",
    "syslog_facility":0,
    "postgres":"",

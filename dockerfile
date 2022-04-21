@@ -7,9 +7,9 @@ RUN pip3 install honeypots
 
 WORKDIR /honeypots
 
-# COPY config.json .  | need to be provided by the user
-# ARG PORTS
-# EXPOSE ${PORTS}
+VOLUME /honeypots
+
+COPY config.json .  
 
 EXPOSE 21
 EXPOSE 8080
@@ -38,4 +38,4 @@ EXPOSE 161
 
 # ENTRYPOINT ["python3","-m","honeypots","-h"]
 
-ENTRYPOINT ["python3","-m","honeypots"]
+ENTRYPOINT ["python3","-m","honeypots","--config","config.json"]

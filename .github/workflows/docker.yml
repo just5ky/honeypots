@@ -42,4 +42,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
         
       - name: Build the Docker image
-        run: docker buildx build --push --platform linux/amd64 --tag ${{ secrets.DOCKERHUB_USERNAME }}/honeypot .
+        run: docker buildx build --push --platform linux/amd64 --tag ${{ secrets.DOCKERHUB_USERNAME }}/honeypot:dev .
