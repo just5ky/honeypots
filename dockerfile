@@ -6,8 +6,8 @@ RUN echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debc
 RUN pip3 install honeypots
 
 WORKDIR /honeypots
+COPY config.json .  
 
-# COPY config.json .  | need to be provided by the user
 # ARG PORTS
 # EXPOSE ${PORTS}
 
