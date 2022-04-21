@@ -12,7 +12,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: honeypot
+  IMAGE_NAME: honeypots
 
 jobs:
   build:
@@ -42,4 +42,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
         
       - name: Build the Docker image
-        run: docker buildx build --push --platform linux/amd64,linux/amd64 --tag ${{ secrets.DOCKERHUB_USERNAME }}/honeypot .
+        run: docker buildx build --push --platform linux/arm64/v8,linux/amd64 --tag ${{ secrets.DOCKERHUB_USERNAME }}/honeypots .
