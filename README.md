@@ -79,7 +79,7 @@ services:
             - 8080:8080
             - 9200:9200
             - 11211:11211
-        ```
+```
 
 ### Exposed ports internally
 
