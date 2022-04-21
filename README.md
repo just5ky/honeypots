@@ -52,39 +52,37 @@ Docker compose
 ```yml
 version: '3.3'
 services:
-    honeypot:
+    honeypots:
         privileged: true
         container_name: honeypots
         image: justsky/honeypots:latest   # latest, arm64, dev
         restart: unless-stopped
         command: --setup all
         volumes:
-
-            - 'PATH TO PLACE /honeypot_logs:/honeypots/logs'       # Add your custom path to this folder
+            - 'PATH TO /honeypot_logs:/honeypots/logs'       # Add your custom path to this folder
         ports:                                                     # Dont change the internal ports, change only external
-
-            - 21:21 
-            - 22:22
-            - 23:23 
-            - 25:25
-            - 80:80 
-            - 110:110
-            - 123:123
-            - 143:143
-            - 161:161
-            - 389:389
-            - 443:443
-            - 445:445
-            - 1080:1080
-            - 1433:1433
-            - 1521:1521
-            - 3306:3306
-            - 5432:5432
-            - 5900:5900
-            - 6379:6379
-            - 8080:8080
-            - 9200:9200
-            - 11211:11211
+            - 21:21         # FTP
+            - 22:22         # SSH
+            - 23:23         # TELNET
+            - 25:25         # SMTP
+            - 80:80         # HTTP
+            - 110:110       # POP3
+            - 123:123       # NTP
+            - 143:143       # 143
+            - 161:161       # SNMP
+            - 389:389       # LDAP
+            - 443:443       # HTTPS
+            - 445:445       # SMB
+            - 1080:1080     # SOCKS5
+            - 1433:1433     # MSSQL
+            - 1521:1521     # ORACLE
+            - 3306:3306     # MYSQL
+            - 5432:5432     # POSTGRES
+            - 5900:5900     # VNC
+            - 6379:6379     # REDIS
+            - 8080:8080     # HTTPPROXY
+            - 9200:9200     # ELASTIC
+            - 11211:11211   # MEMCACHE
 ```
 
 ### Exposed ports internally
