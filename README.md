@@ -37,11 +37,49 @@ General options:
 ## Custom configure with logs location
 With Terminal output
 
-` docker run -i --privileged justsky/honeypot --setup all --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/  `
+` docker run -i --privileged  -p <as required> -v ~/honeypots:/honeypots/ justsky/honeypot --config config.json --setup all `
 
 Without Terminal output
 
-` docker run -d -i --privileged justsky/honeypot --setup all --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/  `
+` docker run -d -i --privileged --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/ justsky/honeypot --setup all `
+
+Docker compose
+
+```yml
+version: '3.3'
+services:
+    honeypot:
+        privileged: true
+        container_name: honeypots
+        image: justsky/honeypot:latest   # latest, arm64, dev
+        restart: unless-stopped
+        command: --setup all
+        volumes:
+            - 'PATH TO PLACE /honeypot_logs:/honeypots'       # Add your custom path to this folder
+        ports:                                                # Dont change the internal ports, change only external
+            - 21:21 
+            - 22:22
+            - 23:23 
+            - 25:25
+            - 80:80 
+            - 110:110
+            - 123:123
+            - 143:143
+            - 161:161
+            - 389:389
+            - 443:443
+            - 445:445
+            - 1080:1080
+            - 1433:1433
+            - 1521:1521
+            - 3306:3306
+            - 5432:5432
+            - 5900:5900
+            - 6379:6379
+            - 8080:8080
+            - 9200:9200
+            - 11211:11211
+        ```
 
 ### Exposed ports internally
 
@@ -91,5 +129,5 @@ Without Terminal output
 ```
 
 ### Things to add
-- Docker compose
+- ~~Docker compose~~
 - ELK integration
