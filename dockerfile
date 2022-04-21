@@ -38,4 +38,4 @@ EXPOSE 161
 
 # ENTRYPOINT ["python3","-m","honeypots","-h"]
 
-ENTRYPOINT ["python3","-m","honeypots"]
+ENTRYPOINT ["python3","-m","honeypots","--config","config.json"]
