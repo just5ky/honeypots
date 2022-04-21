@@ -38,11 +38,11 @@ General options:
 With Terminal output
 
 
-` docker run -i -p 80:80 -v ~/honeypot_logs:/honeypots/logs justsky/honeypot --setup all`
+` docker run -i -p 80:80 -v ~/honeypot_logs:/honeypots/logs justsky/honeypots --setup all`
 
 Without Terminal output
 
-` docker run -d -i -p 80:80 -v ~/honeypot_logs:/honeypots/logs justsky/honeypot --setup all`
+` docker run -d -i -p 80:80 -v ~/honeypot_logs:/honeypots/logs justsky/honeypots --setup all`
 
 
 Docker compose
@@ -53,7 +53,7 @@ services:
     honeypot:
         privileged: true
         container_name: honeypots
-        image: justsky/honeypot:latest   # latest, arm64, dev
+        image: justsky/honeypots:latest   # latest, arm64, dev
         restart: unless-stopped
         command: --setup all
         volumes:
