@@ -37,11 +37,11 @@ General options:
 ## Custom configure with logs location
 With Terminal output
 
-` docker run -i --privileged  -p <as required> -v ~/honeypots:/honeypots/ justsky/honeypot --config config.json --setup all `
+` docker run -i --privileged  -p <as required> -v ~/honeypots:/honeypots justsky/honeypot --setup all`
 
 Without Terminal output
 
-` docker run -d -i --privileged --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/ justsky/honeypot --setup all `
+` docker run -d -i --privileged -p <as required> -v ~/honeypots:/honeypots justsky/honeypot --setup all`
 
 Docker compose
 
