@@ -37,11 +37,13 @@ General options:
 ## Custom configure with logs location
 With Terminal output
 
+
 ` docker run -i -p 80:80 -v ~/honeypot_logs:/honeypots/logs justsky/honeypot --setup all`
 
 Without Terminal output
 
 ` docker run -d -i -p 80:80 -v ~/honeypot_logs:/honeypots/logs justsky/honeypot --setup all`
+
 
 Docker compose
 
@@ -55,8 +57,10 @@ services:
         restart: unless-stopped
         command: --setup all
         volumes:
+
             - 'PATH TO PLACE /honeypot_logs:/honeypots/logs'       # Add your custom path to this folder
         ports:                                                     # Dont change the internal ports, change only external
+
             - 21:21 
             - 22:22
             - 23:23 
