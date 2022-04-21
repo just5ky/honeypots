@@ -1,17 +1,18 @@
-name: DockerHub
+name: Dockerhub
 
 on:
   #schedule:
   #  - cron: '50 15 * * *'  #Change this to when you want automatic builds
-  push:
-    paths-ignore:
-    - 'README.md'
-    tags: [ 'v*.*.*' ]
+#  push:
+#    branches: [ master ]
+    #tags: [ 'v*.*.*' ]
+#  pull_request:
+#    branches: [ master ]
   workflow_dispatch:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_IMAGE_NAME }}
+  IMAGE_NAME: honeypot
 
 jobs:
   build:
@@ -32,7 +33,7 @@ jobs:
         uses: docker/setup-qemu-action@v1
         
       - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v1.6.0
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
@@ -40,34 +41,5 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
         
-      - name: Production Build and push
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_IMAGE_NAME }}:latest
-          platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
-
-      - name: Production Get Tag Name
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: little-core-labs/get-git-tag@v3.0.1
-        id: tagName
-
-      - name: Production Tag Build and push
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_IMAGE_NAME }}:${{ steps.tagName.outputs.tag }}
-          platforms: linux/amd64,linux/arm64/v8        
-
-      - name: Development Build and push
-        if: ${{ github.ref == 'refs/heads/develop' }}
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_IMAGE_NAME }}:develop
-          platforms: linux/amd64,linux/arm64/v8
+      - name: Build the Docker image
+        run: docker buildx build --push --platform linux/amd64,linux/arm64/v8 --tag ${{ secrets.DOCKERHUB_USERNAME }}/honeypot .
