@@ -37,11 +37,11 @@ General options:
 ## Custom configure with logs location
 With Terminal output
 
-` docker run -i --privileged honeypot --setup all --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/  `
+` docker run -i --privileged justsky/honeypot --setup all --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/  `
 
 Without Terminal output
 
-` docker run -d -i --privileged honeypot --setup all --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/  `
+` docker run -d -i --privileged justsky/honeypot --setup all --config config.json -p <as required> -v ~/honeypots:/var/log/honeypots/  `
 
 ### Exposed ports internally
 
