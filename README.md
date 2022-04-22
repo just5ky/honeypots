@@ -11,7 +11,7 @@
 
 Dockerhub repo link: [justsky/honeypots](https://hub.docker.com/r/justsky/honeypots)
 
-## docker run -rm justsky/honeypots -h
+## docker run --rm justsky/honeypots -h
 ```sh
 Qeeqbox/honeypots customizable honeypots for monitoring network traffic, bots activities, and username\password credentials
 
