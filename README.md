@@ -53,14 +53,15 @@ Docker compose
 version: '3.3'
 services:
     honeypots:
-        privileged: true
         container_name: honeypots
-        image: justsky/honeypots:latest   # latest, arm64, dev
+        image: justsky/honeypots:latest   # latest, dev
         restart: unless-stopped
         command: --setup all
+# Add your custom path to this folder
         volumes:
-            - 'PATH TO /honeypot_logs:/honeypots/logs'       # Add your custom path to this folder
-        ports:                                                     # Dont change the internal ports, change only external
+            - '~/honeypot_logs:/honeypots/logs'
+# Dont change the internal ports, change only external            
+        ports:
             - 21:21         # FTP
             - 22:22         # SSH
             - 23:23         # TELNET
