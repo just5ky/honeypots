@@ -4,6 +4,7 @@
 
 25 low-high level honeypots in a single PyPI package for monitoring network traffic, bots activities, and username \ password credentials. 
 
+Based on PyPi package [honeypots](https://pypi.org/project/honeypots/)
 
 <img src="https://raw.githubusercontent.com/qeeqbox/honeypots/main/readme/intro.gif" style="max-width:768px"/>
 
@@ -134,5 +135,5 @@ services:
 ```
 
 ### Things to add
-- ~~Docker compose~~
+- Docker compose
 - ELK integration
