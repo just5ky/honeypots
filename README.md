@@ -11,7 +11,7 @@ Based on PyPi package [honeypots](https://pypi.org/project/honeypots/)
 ---
 
 Dockerhub repo link: [justsky/honeypots](https://hub.docker.com/r/justsky/honeypots)<br>
-![Docker Build](https://github.com/just5ky/port-forward/workflows/Docker%20CI/badge.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/justsky/honeypots) ![Docker Size](https://img.shields.io/docker/image-size/justsky/honeypots?color=orange)
+![Docker Build](https://github.com/just5ky/port-forward/workflows/Docker/badge.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/justsky/honeypots) ![Docker Size](https://img.shields.io/docker/image-size/justsky/honeypots?color=orange)
 ## docker run --rm justsky/honeypots -h
 ```sh
 Qeeqbox/honeypots customizable honeypots for monitoring network traffic, bots activities, and username\password credentials
