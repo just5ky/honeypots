@@ -1,4 +1,4 @@
-# Docker image of [qeeqbox/honeypots](https://github.com/qeeqbox/honeypots)
+# [qeeqbox/honeypots](https://github.com/qeeqbox/honeypots) Dockerized
 
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/honeypots/main/readme/honeypots.png"></p>
 
