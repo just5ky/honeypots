@@ -11,7 +11,8 @@
          "password":"anonymous",
          "log_file_name":"ftp.log",
          "max_bytes":1000000,
-         "backup_count":10
+         "backup_count":10,
+         "options":["capture_commands"]
       },
       "httpproxy":{
          "port":8080,
