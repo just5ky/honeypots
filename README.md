@@ -4,14 +4,16 @@
 
 25 low-high level honeypots in a single PyPI package for monitoring network traffic, bots activities, and username \ password credentials. 
 
-Based on PyPi package [honeypots](https://pypi.org/project/honeypots/)
+Based on PyPi [honeypots](https://pypi.org/project/honeypots/)
 
 <img src="https://raw.githubusercontent.com/qeeqbox/honeypots/main/readme/intro.gif" style="max-width:768px"/>
 
 ---
 
 Dockerhub repo link: [justsky/honeypots](https://hub.docker.com/r/justsky/honeypots)<br>
-![Docker Build](https://github.com/just5ky/port-forward/workflows/Docker/badge.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/justsky/honeypots) ![Docker Size](https://img.shields.io/docker/image-size/justsky/honeypots?color=orange)
+![Docker Build](https://github.com/just5ky/port-forward/workflows/Docker/badge.svg) 
+![Docker Pulls](https://img.shields.io/docker/pulls/justsky/honeypots)
+![Docker Size](https://img.shields.io/docker/image-size/justsky/honeypots)
 ## docker run --rm justsky/honeypots -h
 ```sh
 Qeeqbox/honeypots customizable honeypots for monitoring network traffic, bots activities, and username\password credentials
@@ -79,9 +81,11 @@ services:
             - 1433:1433     # MSSQL
             - 1521:1521     # ORACLE
             - 3306:3306     # MYSQL
+            - 5060:5060     # SIP
             - 5432:5432     # POSTGRES
             - 5900:5900     # VNC
             - 6379:6379     # REDIS
+            - 6667:6667     # IRC
             - 8080:8080     # HTTPPROXY
             - 9200:9200     # ELASTIC
             - 11211:11211   # MEMCACHE
@@ -89,7 +93,7 @@ services:
 
 ### Exposed ports internally
 
-`21, 22, 23, 25, 80, 110, 123, 143, 161, 389, 443, 445, 1080, 1433, 1521, 3306, 5432, 5900, 6379, 8080, 9200, 11211`
+`21, 22, 23, 25, 80, 110, 123, 143, 161, 389, 443, 445, 1080, 1433, 1521, 3306, 5432, 5060, 5900, 6379, 6667, 8080, 9200, 11211`
 
 
 #### config.json (Output to folder)
@@ -111,7 +115,7 @@ services:
       "username": "ftp",
       "password": "anonymous",
       "log_file_name": "ftp.log",
-      "max_bytes": 10000,
+      "max_bytes": 1000000,
       "backup_count": 10
     }
   }
