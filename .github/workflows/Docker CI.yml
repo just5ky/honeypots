@@ -67,7 +67,7 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           status: ${{ job.status }}
-          content: "Honeypots Docker image has been pushed to repo."
+          #content: "Honeypots Docker image has been pushed to repo."
           title: "CI"
           description: "Build and pushed Docker image"
           color: 0x0000ff
