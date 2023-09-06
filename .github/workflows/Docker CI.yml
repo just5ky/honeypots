@@ -61,3 +61,16 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/honeypots:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/honeypots:buildcache,mode=max
+
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          content: "Honeypots Docker image has been pushed to repo."
+          title: "CI"
+          description: "Build and pushed Docker image"
+          color: 0x0000ff
+          url: "https://github.com/just5ky/honeypots"
+          username: GitHub Actions
+          avatar_url: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/github.png
