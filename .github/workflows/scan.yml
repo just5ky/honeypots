@@ -41,7 +41,7 @@ jobs:
     - name: Pull the Docker image
       run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/honeypots
     - name: Run the Anchore scan action itself with GitHub Advanced Security code scanning integration enabled
-      uses: anchore/scan-action@24fd7c9060f3c96848dd1929fac8d796fb5ae4b4
+      uses: anchore/scan-action@62370b53ab026f5d09b9fb43a7b5ec4b73c1a8e0
       with:
         image: "${{ secrets.DOCKERHUB_USERNAME }}/honeypots"
         acs-report-enable: true
