@@ -59,6 +59,7 @@ services:
         container_name: honeypots
         image: justsky/honeypots:latest   # latest, dev
         restart: unless-stopped
+        stdin_open: true
         command: --setup all
 # Add your custom path to this folder
         volumes:
