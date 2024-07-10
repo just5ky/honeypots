@@ -66,7 +66,7 @@ jobs:
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/honeypots
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@062f2592684a31eb3aa050cc61e7ca1451cecd3d
+        uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8
         with:
           image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/honeypots'
           format: 'template'
