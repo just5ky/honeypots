@@ -1,13 +1,10 @@
-FROM python:3.14
+FROM python:3.12-slim AS builder
+RUN apt-get update -y && apt-get install -y --no-install-recommends gcc python3-dev && rm -rf /var/lib/apt/lists/*
+RUN pip3 install --no-cache-dir --target=/install honeypots "cryptography<42"
 
-RUN apt-get update -y 
-
-RUN pip3 install honeypots
-
+FROM python:3.12-slim
+COPY --from=builder /install /usr/local/lib/python3.12/site-packages
 WORKDIR /honeypots
-
 VOLUME /honeypots
-
-COPY config.json .  
-
-ENTRYPOINT ["python3","-m","honeypots","--config","config.json"]
+COPY config.json .
+ENTRYPOINT ["python3","-W","ignore::DeprecationWarning","-m","honeypots","--config","config.json"]
